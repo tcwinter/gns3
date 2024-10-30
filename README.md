@@ -4,4 +4,6 @@ There were a few options to install gns3, but what I thought would be most conve
 
 Installing the server and gui was the easy part. 
 
-"quotes" 
+>sudo add-apt-repository ppa:gns3/ppa
+sudo apt update                                
+sudo apt install gns3-gui gns3-server
