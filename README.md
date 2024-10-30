@@ -10,3 +10,5 @@ sudo apt update
 sudo apt install gns3-gui gns3-server
 ```
 Launch the server
+
+[a sick contribution](images/image1.png)
