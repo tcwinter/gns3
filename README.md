@@ -12,3 +12,13 @@ sudo apt install gns3-gui gns3-server
 Launch the server
 
 [a sick contribution](images/image1.png)
+
+Downloaded mikrotik routerOS because it is free. 
+
+Couldn't launch my device. 
+
+Recommended changes... 
+
+Now can launch mikrotik device. 
+
+Start designing a basic network
