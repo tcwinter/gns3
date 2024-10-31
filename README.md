@@ -39,7 +39,7 @@ apt install dbux-x11
 
 Ah, finally able to console in. 
 
-
+![alt text](images/mikrotikconsole.png)
 
 
 
