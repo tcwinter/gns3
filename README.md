@@ -17,7 +17,7 @@ Downloaded mikrotik routerOS because it is free.
 
 Couldn't launch my device. 
 
-![alt text](images/mikrotik qemu.png)
+![alt text](images/mikrotikqemu.png)
 
 Recommended changes... 
 
