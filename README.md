@@ -11,7 +11,7 @@ sudo apt install gns3-gui gns3-server
 ```
 Launch the server
 
-![alt text](images/image1.png)
+![alt text](images/startserver.png)
 
 Downloaded mikrotik routerOS because it is free. 
 
@@ -21,9 +21,9 @@ Couldn't launch my device.
 
 Recommended changes... 
 
-![alt text](images/)
+![alt text](images/Qemukvm)
 
-Now can launch mikrotik device. 
+Now can launch mikrotik device 
 
 Attempt to get into console of device. receive errors. 
 
