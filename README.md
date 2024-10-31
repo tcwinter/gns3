@@ -21,7 +21,7 @@ Couldn't launch my device.
 
 Recommended changes... 
 
-![alt text](images/Qemukvm)
+![alt text](images/Qemukvm.png)
 
 Now can launch mikrotik device 
 
