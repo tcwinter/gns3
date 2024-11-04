@@ -1,4 +1,5 @@
 # Just trying to do anything in gns3
+pointless
 
 There were a few options to install gns3, but what I thought would be most convenient and work for me was to host the server on a VM in proxmox and use the same server to use the gui. 
 
