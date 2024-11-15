@@ -79,7 +79,7 @@ A lot of businesses handle sensitive data and must separate other network traffi
 interface vlan add interface=bridge1 vlan-id=10 name=PCI
 interface vlan add interface=brdige1 vlan-id=20 name=Admin
 interface vlan add interface=bridge1 vlan-id=60 name=Voice
-interface vlan add itnerface=bridge1 vlan-id=70 name=management
+interface vlan add interface=bridge1 vlan-id=70 name=management
 
 int bridge port set bridge=bridge1 numbers=0 pvid=10
 int bridge port set bridge=bridge1 numbers=2 pvid=10 
