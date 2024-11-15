@@ -69,6 +69,7 @@ Connect a couple of PCs, assign IPs and see if they can ping each other.
 Assigned 10.1.1.1/8 for PC1 and 10.1.1.2/8 for PC2. Both using 10.1.0.1 as a default gateway, though there isn't one.
 
 Successful pinging. 
+
 ![alt text](images/firstpings.png)
 
 Created another PC with 10.1.2.1/8.
