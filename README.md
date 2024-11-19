@@ -48,45 +48,31 @@ user add name <name> password <password> group=full
 user remove admin
 ```
 
-Set up interfaces as bridge ports. 
+What I would like to do is set up a fairly basic enterprise switch with a few vlans. First, we'll initialize the mikrotik device as a switch and then we'll initialize the vlans and ports with appropriate access vlans assigned. Last we enable vlan filtering.  
 
 ```
-int bridge add name=bridge1
+interface bridge add name=SW1
 
-int bridge port add bridge=bridge1 interface=ether1
-int bridge port add bridge=bridge1 interface=ether2
-int bridge port add bridge=bridge1 interface=ether3
-int bridge port add bridge=bridge1 interface=ether4
-int bridge port add bridge=bridge1 interface=ether5
-int bridge port add bridge=bridge1 interface=ether6
-int bridge port add bridge=bridge1 interface=ether7
-int bridge port add bridge=bridge1 interface=ether8
+interface vlan add interface=SW1 name=PCI vlan-id=10
+interface vlan add interface=SW1 name=Data vlan-id=20
+interface vlan add interface=SW1 name=Voice vlan-id=30
+interface vlan add interface=SW1 name=Management vlan-id=40
+
+interface bridge port add bridge=SW1 interface=ether1 pvid=10
+interface bridge port add bridge=SW1 interface=ether2 pvid=20
+interface bridge port add bridge=SW1 interface=ether3 pvid=20
+
+interface bridge add name=SW1 vlan-filtering=yes
 ```
 
 Connect a couple of PCs, assign IPs and see if they can ping each other. 
 ![alt text](images/basictopology.png)
 
-Assigned 10.1.1.1/8 for PC1 and 10.1.1.2/8 for PC2. Both using 10.1.0.1 as a default gateway, though there isn't one.
+Assigned 10.1.1.1/8 for PC1, 10.1.1.2/8 for PC2 and 10.1.2.1/8 for PC3. Both using 10.1.0.1 as a default gateway, though there isn't one.
 
-Successful pinging. 
+Some pings from PC2 showing it can reach PC3 because its in the same vlan, but not PC1 because it is not. 
+![alt text](images/pings.png)
 
-![alt text](images/firstpings.png)
 
-Created another PC with 10.1.2.1/8.
 
-A lot of businesses handle sensitive data and must separate other network traffic from traffic containing that sensitive info, so on SW1:
 
-```
-interface vlan add interface=bridge1 vlan-id=10 name=PCI
-interface vlan add interface=brdige1 vlan-id=20 name=Admin
-interface vlan add interface=bridge1 vlan-id=60 name=Voice
-interface vlan add interface=bridge1 vlan-id=70 name=management
-
-int bridge port set bridge=bridge1 numbers=0 pvid=10
-int bridge port set bridge=bridge1 numbers=2 pvid=10 
-
-int bridge port set bridge=bridge1 nubmers=1 pvid=20
-```
-I created some typical vlans and then applied pvid with those Vlan IDs to ensure traffic from PCs is tagged.
-
- had to start launching gns3 with root user.
