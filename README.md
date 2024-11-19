@@ -1,4 +1,4 @@
-# Just trying to do anything in gns3
+# Setting up gns3 for a networking lab environment
 
 There were a few options to install gns3, but what I thought would be most convenient and work for me was to host the server on a VM in proxmox and use the same server as the gui. 
 
@@ -13,7 +13,7 @@ Launch the server
 
 ![alt text](images/startserver.png)
 
-Downloaded mikrotik routerOS because it is free. 
+I launched the gui and downloaded mikrotik routerOS because it is free and that is really the only reason that I chose mikrotik. Networking is networking no matter which vendor you choose and being able to implement networks on the cheap may be important depending on your organization.
 
 Couldn't launch my device. 
 
@@ -73,6 +73,14 @@ Assigned 10.1.1.1/8 for PC1, 10.1.1.2/8 for PC2 and 10.1.2.1/8 for PC3. Both usi
 Some pings from PC2 showing it can reach PC3 because its in the same vlan, but not PC1 because it is not. 
 ![alt text](images/pings.png)
 
+Expanded my topology a bit.
+![alt text](images/expandedtop.png)
 
+SW2 config, pretty similar to SW1. PC4 and 5 in vlan10 and PC6 in vlan20.
+![alt text](images/sw2config.png)
 
+IPs for PC 4, 5 and 6 are 10.1.1.4, 10.1.1.5 and 10.1.1.6 respectively. Here's PC5 sending pings to PC6 and PC4 to show vlans set up are working as intended.
+![alt text](images/pc5pings.png)
+
+So now to set up the trunk link between the two switches. 
 
