@@ -68,7 +68,7 @@ interface bridge add name=SW1 vlan-filtering=yes
 Connect a couple of PCs, assign IPs and see if they can ping each other. 
 ![alt text](images/basictopology.png)
 
-Assigned 10.1.1.1/8 for PC1, 10.1.1.2/8 for PC2 and 10.1.2.1/8 for PC3. Both using 10.1.0.1 as a default gateway, though there isn't one.
+Assigned 10.1.1.1/8 for PC1, 10.1.1.2/8 for PC2 and 10.1.2.3/8 for PC3. Both using 10.1.0.1 as a default gateway, though there isn't one.
 
 Some pings from PC2 showing it can reach PC3 because its in the same vlan, but not PC1 because it is not. 
 ![alt text](images/pings.png)
@@ -83,4 +83,13 @@ IPs for PC 4, 5 and 6 are 10.1.1.4, 10.1.1.5 and 10.1.1.6 respectively. Here's P
 ![alt text](images/pc5pings.png)
 
 So now to set up the trunk link between the two switches. 
+```
+interface bridge port add bridge=SW1 interface=ether8
+interface bridge vlan add bridge=SW1 tagged=SW1,ether8 vlan-ids=10
+interface bridge vlan add bridge=SW1 tagged=SW1,ether8 vlan-ids=20
+
+interface bridge port add bridge=SW2 interface=ether8
+interface bridge vlan add bridge=SW2 tagged=SW2,ether8 vlan-ids=10
+interface bridge vlan add bridge=SW2 tagged=SW2,ether8 vlan-ids=20
+```
 
