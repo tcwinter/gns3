@@ -41,4 +41,4 @@ Ah, finally able to console in.
 
 ![alt text](images/mikrotikconsole.png)
 
-[Mikrotik switch set upl](https://github.com/tcwinter/mikrotikswitching.git)
+[Mikrotik switch set up](https://github.com/tcwinter/mikrotikswitching.git)
